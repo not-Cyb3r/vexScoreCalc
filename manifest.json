@@ -2,7 +2,7 @@
     "name": "Score Tracker",
     "short_name": "Score",
     "description": "A scoring application for robotics competitions",
-    "start_url": "/index.html",
+    "start_url": "/vexScoreCalc/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#d32f2f",
