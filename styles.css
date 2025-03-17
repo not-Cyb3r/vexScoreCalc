@@ -14,7 +14,6 @@
     padding: 0px;
   }
   
-  /* Add this to your existing CSS */
   .global-reset {
     position: fixed;
     bottom: 10px;
@@ -29,7 +28,7 @@
     cursor: pointer;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.1s;
-    z-index: 1000; /* Ensures it stays on top */
+    z-index: 1000;
   }
   
   .global-reset:hover {
@@ -72,7 +71,7 @@
   
   .hang-alliance {
     display: flex;
-    gap: 10px; /* Space between hang tiers */
+    gap: 10px;
   }
   
   .hang-tier {
@@ -134,17 +133,16 @@
     cursor: pointer;
     z-index: 1;
   }
-  /* High Stake */
+  
   #highStake {
     position: relative;
     width: 62px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6px 4px; /* Add some spacing */
+    margin: 6px 4px;
   }
   
-  /* High Stake Ring States */
   .high-stake-ring.red {
     background-color: red;
     border-color: red;
@@ -165,7 +163,6 @@
     max-width: 100%;
   }
   
-  /* Individual button styles */
   .auton-button {
     width: 30px;
     height: 30px;
@@ -177,7 +174,6 @@
     transition: background-color 0.1s, color 0.1s;
   }
   
-  /* Red autonomous button */
   #auton-red {
     border-color: red;
     color: red;
@@ -188,7 +184,6 @@
     color: white;
   }
   
-  /* Blue autonomous button */
   #auton-blue {
     border-color: blue;
     color: blue;
@@ -199,7 +194,6 @@
     color: white;
   }
   
-  /* Active effect when button is clicked */
   .auton-button:active {
     transform: translate(2px, 2px);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -256,18 +250,16 @@
       padding-top: 18px;
     }
   
-    /* On smaller screens, allow content to wrap around */
     .auton-container {
-      justify-content: center; /* Center buttons on small screens */
+      justify-content: center;
     }
-  
+    
     .auton-button {
-      width: 28px; /* Reduce button size for smaller screens */
+      width: 28px;
       height: 28px;
     }
   }
   
-  /* Stake container */
   .stake {
     position: relative;
     width: 62px;
