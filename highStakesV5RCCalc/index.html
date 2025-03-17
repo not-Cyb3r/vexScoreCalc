@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d32f2f">
+  <title>Score Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="score-container">
+        <!-- Red Hang -->
+        <div class="hang-container">
+        <div class="hang-alliance red-hang">
+            <div class="hang-tier red" data-tier="1">
+            <div class="fill"></div>
+            <div class="level">0</div>
+            </div>
+            <div class="hang-tier red" data-tier="2">
+            <div class="fill"></div>
+            <div class="level">0</div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Scores and Autonomous Buttons -->
+        <div class="scores-and-auton">
+        <div class="scores">
+            <div class="score red-score">
+            <span id="redPoints">0</span>
+            </div>
+            <!-- High Stake Ring -->
+            <div class="stake" id="highStake">
+            <div class="stake-cap"></div>
+            <div class="stake-pole"></div>
+            <div class="high-stake-ring" id="highStakeRing"></div>
+            <div class="ring-container" id="highStake-rings"></div>
+    </div>
+            
+    <button class="global-reset" id="globalReset">🗑️</button>
+    
+            <div class="score blue-score">
+            <span id="bluePoints">0</span>
+            </div>
+        </div>
+        <!-- Autonomous Buttons -->
+        <div class="auton-container">
+            <button id="auton-red" class="auton-button">A</button>
+            <button id="auton-blue" class="auton-button">A</button>
+        </div>
+        </div>
+    
+        <!-- Blue Hang -->
+        <div class="hang-container">
+        <div class="hang-alliance blue-hang">
+            <div class="hang-tier blue" data-tier="1">
+            <div class="fill"></div>
+            <div class="level">0</div>
+            </div>
+            <div class="hang-tier blue" data-tier="2">
+            <div class="fill"></div>
+            <div class="level">0</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Main Container for Stakes -->
+    <div class="main-container" id="stakesContainer"></div>
+  <div class="main-container" id="stakesContainer"></div>
+  <button class="global-reset" id="globalReset">🗑️</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
