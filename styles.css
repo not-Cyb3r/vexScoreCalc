@@ -20,10 +20,6 @@ body {
   text-align: center;
 }
 
-button, .hang-tier, .high-stake-ring, .stake, .stake-container, .corner-controls {
-  touch-action: manipulation;
-}
-
 .global-reset {
   position: fixed;
   bottom: 10px;

@@ -7,6 +7,18 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+document.addEventListener('touchstart', (event) => {
+  if (event.touches.length > 1) {
+    event.preventDefault(); // Blocks pinch zoom
+  }
+}, { passive: false });
+
+document.addEventListener('touchmove', (event) => {
+  if (event.touches.length > 1) {
+    event.preventDefault(); // Blocks pinch zoom during movement
+  }
+}, { passive: false });
+
 let scores = { red: 0, blue: 0 };
 let autonomousBonus = { red: false, blue: false };
 let highStakeState = 'transparent';
