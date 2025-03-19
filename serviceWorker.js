@@ -1,6 +1,6 @@
 const CACHE_NAME = 'highStakesV5RCCalc';
 const urlsToCache = [
-  '/vexScoreCalc/',              // Replace with your repo name
+  '/vexScoreCalc/',
   '/vexScoreCalc/index.html',
   '/vexScoreCalc/styles.css',
   '/vexScoreCalc/script.js',
