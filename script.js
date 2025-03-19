@@ -1,3 +1,16 @@
+// Prevent double-tap zoom
+document.addEventListener('touchend', (event) => {
+  const now = new Date().getTime();
+  const lastTouch = document.lastTouchTime || 0;
+  const delta = now - lastTouch;
+  if (delta < 300 && delta > 0) {
+    event.preventDefault();
+  }
+  document.lastTouchTime = now;
+}, { passive: false });
+
+// Rest of your script.js remains unchanged
+
 // Service Worker Registration (corrected path for GitHub Pages)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
