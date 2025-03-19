@@ -6,6 +6,9 @@
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+html, body {
   overflow: hidden;
 }
 
@@ -48,7 +51,6 @@ body {
   margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
-  overflow: hidden;
 }
 
 .scores {
