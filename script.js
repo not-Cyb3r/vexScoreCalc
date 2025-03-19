@@ -1,10 +1,10 @@
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/serviceWorker.js')
-        .then(registration => console.log('Service Worker registered:', registration.scope))
-        .catch(error => console.error('Service Worker registration failed:', error));
-    });
-  }
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/your-repo/service-worker.js')
+      .then(reg => console.log('Service Worker registered:', reg.scope))
+      .catch(err => console.error('Registration failed:', err));
+  });
+}
 
 let scores = {
     red: 0,

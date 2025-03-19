@@ -1,6 +1,6 @@
 const CACHE_NAME = 'highStakesV5RCCalc';
 const urlsToCache = [
-  '/vexScoreCalc/',
+  '/vexScoreCalc/',              // Replace with your repo name
   '/vexScoreCalc/index.html',
   '/vexScoreCalc/styles.css',
   '/vexScoreCalc/script.js',
@@ -12,7 +12,11 @@ const urlsToCache = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+      .then(cache => {
+        console.log('Caching:', urlsToCache);
+        return cache.addAll(urlsToCache);
+      })
+      .catch(error => console.error('Install failed:', error))
   );
 });
 
@@ -20,10 +24,14 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        if (response) return response;
+        if (response) {
+          console.log('Serving from cache:', event.request.url);
+          return response;
+        }
         return fetch(event.request).catch(() => {
           if (event.request.mode === 'navigate') {
-            return caches.match('/your-repo/index.html');
+            console.log('Offline fallback to index.html');
+            return caches.match('/vexScoreCalc/index.html');
           }
         });
       })
