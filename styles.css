@@ -9,10 +9,14 @@
 }
 
 html, body {
-  overflow: hidden;
+  zoom: 1;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  touch-action: none;
 }
 
 body {
+  overflow: hidden;
   font-family: Arial, sans-serif;
   text-align: center;
 }
