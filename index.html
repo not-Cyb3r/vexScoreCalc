@@ -9,66 +9,64 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="score-container">
-        <!-- Red Hang -->
-        <div class="hang-container">
-        <div class="hang-alliance red-hang">
-            <div class="hang-tier red" data-tier="1">
-            <div class="fill"></div>
-            <div class="level">0</div>
-            </div>
-            <div class="hang-tier red" data-tier="2">
-            <div class="fill"></div>
-            <div class="level">0</div>
-            </div>
+  <div class="score-container">
+    <!-- Red Hang -->
+    <div class="hang-container">
+      <div class="hang-alliance red-hang">
+        <div class="hang-tier red" data-tier="1">
+          <div class="fill"></div>
+          <div class="level">0</div>
         </div>
+        <div class="hang-tier red" data-tier="2">
+          <div class="fill"></div>
+          <div class="level">0</div>
         </div>
-    
-        <!-- Scores and Autonomous Buttons -->
-        <div class="scores-and-auton">
-        <div class="scores">
-            <div class="score red-score">
-            <span id="redPoints">0</span>
-            </div>
-            <!-- High Stake Ring -->
-            <div class="stake" id="highStake">
-            <div class="stake-cap"></div>
-            <div class="stake-pole"></div>
-            <div class="high-stake-ring" id="highStakeRing"></div>
-            <div class="ring-container" id="highStake-rings"></div>
+      </div>
     </div>
-            
-    <button class="global-reset" id="globalReset">🗑️</button>
-    
-            <div class="score blue-score">
-            <span id="bluePoints">0</span>
-            </div>
+
+    <!-- Scores and Autonomous Buttons -->
+    <div class="scores-and-auton">
+      <div class="scores">
+        <div class="score red-score">
+          <span id="redPoints">0</span>
         </div>
-        <!-- Autonomous Buttons -->
-        <div class="auton-container">
-            <button id="auton-red" class="auton-button">A</button>
-            <button id="auton-blue" class="auton-button">A</button>
+        <!-- High Stake Ring -->
+        <div class="stake" id="highStake">
+          <div class="stake-cap"></div>
+          <div class="stake-pole"></div>
+          <div class="high-stake-ring" id="highStakeRing"></div>
+          <div class="ring-container" id="highStake-rings"></div>
         </div>
+        <div class="score blue-score">
+          <span id="bluePoints">0</span>
         </div>
-    
-        <!-- Blue Hang -->
-        <div class="hang-container">
-        <div class="hang-alliance blue-hang">
-            <div class="hang-tier blue" data-tier="1">
-            <div class="fill"></div>
-            <div class="level">0</div>
-            </div>
-            <div class="hang-tier blue" data-tier="2">
-            <div class="fill"></div>
-            <div class="level">0</div>
-            </div>
-        </div>
-        </div>
+      </div>
+      <!-- Autonomous Buttons -->
+      <div class="auton-container">
+        <button id="auton-red" class="auton-button">A</button>
+        <button id="auton-blue" class="auton-button">A</button>
+      </div>
     </div>
-    
-    <!-- Main Container for Stakes -->
-    <div class="main-container" id="stakesContainer"></div>
+
+    <!-- Blue Hang -->
+    <div class="hang-container">
+      <div class="hang-alliance blue-hang">
+        <div class="hang-tier blue" data-tier="1">
+          <div class="fill"></div>
+          <div class="level">0</div>
+        </div>
+        <div class="hang-tier blue" data-tier="2">
+          <div class="fill"></div>
+          <div class="level">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container for Stakes (single instance) -->
   <div class="main-container" id="stakesContainer"></div>
+
+  <!-- Global Reset Button (single instance) -->
   <button class="global-reset" id="globalReset">🗑️</button>
 
   <script src="script.js"></script>
