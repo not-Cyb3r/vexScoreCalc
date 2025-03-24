@@ -322,8 +322,7 @@ body {
   padding-top: 0;
 }
 
-/* Buttons */
-.control-column {
+.button-container {
   display: flex;
   flex-direction: column;
   gap: 4px;
