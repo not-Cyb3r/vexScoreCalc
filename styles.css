@@ -381,7 +381,7 @@ body {
 
 .corner-controls {
   display: flex;
-  gap: 1vw;
+  gap: 8px;
   margin-top: 5px; /* Fixed position */
 }
 
