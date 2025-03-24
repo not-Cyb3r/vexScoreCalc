@@ -1,4 +1,3 @@
-// Service Worker Registration (corrected path for GitHub Pages)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/vexScoreCalc/serviceWorker.js')
@@ -17,7 +16,6 @@ const stakeIds = ['wall1', 'alliance1', 'alliance2', 'wall2', 'mogo1', 'mogo2', 
 const cornerStates = { positive: new Set(), negative: new Set() };
 let hangLevels = { red1: 0, red2: 0, blue1: 0, blue2: 0 };
 
-// Cycle High Stake Ring
 function cycleHighStakeRing() {
   const ring = document.getElementById('highStakeRing');
   if (highStakeState === 'transparent') {
@@ -40,7 +38,6 @@ function cycleHighStakeRing() {
   calculateScore();
 }
 
-// Calculate Score
 function calculateScore() {
   scores = { red: 0, blue: 0 };
 
@@ -94,7 +91,6 @@ function calculateScore() {
   document.getElementById('bluePoints').textContent = scores.blue;
 }
 
-// Toggle Autonomous Bonus
 function toggleAutonomousBonus(color) {
   const button = document.getElementById(`auton-${color}`);
   button.classList.toggle('selected');
@@ -102,7 +98,6 @@ function toggleAutonomousBonus(color) {
   calculateScore();
 }
 
-// Update Autonomous Buttons
 function updateAutonomousButtons() {
   ['red', 'blue'].forEach(color => {
     const button = document.getElementById(`auton-${color}`);
@@ -111,7 +106,6 @@ function updateAutonomousButtons() {
   });
 }
 
-// Create Stake Column
 function createStakeColumn(id) {
   const column = document.createElement('div');
   column.className = `stake-column ${id.startsWith('alliance') ? 'alliance-column' : ''}`;
@@ -167,7 +161,6 @@ function createStakeColumn(id) {
   return column;
 }
 
-// Handle Corner Selection
 function handleCornerSelection(event) {
   const button = event.target;
   const mogoId = button.dataset.mogo;
@@ -188,7 +181,6 @@ function handleCornerSelection(event) {
   calculateScore();
 }
 
-// Update Corner Buttons
 function updateCornerButtons() {
   document.querySelectorAll('.corner-btn').forEach(button => {
     const cornerType = button.dataset.corner;
@@ -197,7 +189,6 @@ function updateCornerButtons() {
   });
 }
 
-// Add Ring
 function addRing(stakeId, color) {
   const ringsContainer = document.getElementById(`${stakeId}-rings`);
   const maxRings = stakeId.startsWith('alliance') ? 2 : 6;
@@ -213,7 +204,6 @@ function addRing(stakeId, color) {
   calculateScore();
 }
 
-// Handle Button Click
 function handleButtonClick(stakeId, { action, color }) {
   switch (action) {
     case 'add': addRing(stakeId, color); break;
@@ -222,7 +212,6 @@ function handleButtonClick(stakeId, { action, color }) {
   }
 }
 
-// Remove Topmost Ring
 function removeTopmostRing(stakeId) {
   const rings = document.getElementById(`${stakeId}-rings`);
   if (rings.children.length > 0) {
@@ -234,7 +223,6 @@ function removeTopmostRing(stakeId) {
   }
 }
 
-// Reset Stake
 function resetStake(stakeId) {
   const rings = document.getElementById(`${stakeId}-rings`);
   const removedRings = stakes[stakeId];
@@ -253,7 +241,6 @@ function resetStake(stakeId) {
   calculateScore();
 }
 
-// Update Add Ring Buttons
 function updateAddRingButtons() {
   document.querySelectorAll('.button.red[data-action="add"]').forEach(button => {
     button.disabled = ringCounts.red >= RING_LIMIT;
@@ -263,7 +250,6 @@ function updateAddRingButtons() {
   });
 }
 
-// Update Hang Tier Display
 function updateHangTierDisplay(tierElement, level) {
   const fill = tierElement.querySelector('.fill');
   const levelDisplay = tierElement.querySelector('.level');
@@ -272,7 +258,6 @@ function updateHangTierDisplay(tierElement, level) {
   levelDisplay.textContent = level;
 }
 
-// Reset Everything
 function resetEverything() {
   scores = { red: 0, blue: 0 };
   autonomousBonus = { red: false, blue: false };
@@ -292,16 +277,18 @@ function resetEverything() {
   calculateScore();
 }
 
-// DOMContentLoaded Event
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('stakesContainer');
-  stakeIds.forEach(id => container.appendChild(createStakeColumn(id)));
+  // Populate stake containers
+  stakeIds.forEach(id => {
+    const container = document.getElementById(`${id}-container`);
+    if (container) container.appendChild(createStakeColumn(id));
+  });
 
   document.getElementById('highStakeRing').addEventListener('click', cycleHighStakeRing);
   document.getElementById('auton-red').addEventListener('click', () => toggleAutonomousBonus('red'));
   document.getElementById('auton-blue').addEventListener('click', () => toggleAutonomousBonus('blue'));
   document.getElementById('globalReset').addEventListener('click', () => {
-    console.log('Global Reset clicked'); // Debugging
+    console.log('Global Reset clicked');
     resetEverything();
   });
 
