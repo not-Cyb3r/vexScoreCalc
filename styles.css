@@ -6,12 +6,17 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   touch-action: none;
 }
 
 html, body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  height: 100%;
   height: 100%;
   overflow: hidden;
   font-family: Arial, sans-serif;
@@ -90,14 +95,16 @@ body {
 }
 
 .hang-tier {
-  width: 40px;
-  height: 40px;
+  width: min(8vw, 40px);
+  height: min(8vw, 40px);
   border: 3px solid;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
 }
 
+.hang-tier.red { border-color: #d32f2f; }
+.hang-tier.blue { border-color: #303f9f; }
 .hang-tier.red { border-color: #d32f2f; }
 .hang-tier.blue { border-color: #303f9f; }
 
@@ -111,13 +118,15 @@ body {
 
 .hang-tier.red .fill { background-color: #ff000001; }
 .hang-tier.blue .fill { background-color: #0000ff01; }
+.hang-tier.red .fill { background-color: #ff000001; }
+.hang-tier.blue .fill { background-color: #0000ff01; }
 
 .hang-tier .level {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: min(4vw, 24px);
   font-weight: bold;
   z-index: 1;
 }
@@ -153,8 +162,8 @@ body {
 }
 
 .high-stake-ring {
-  width: 42px;
-  height: 14px;
+  width: min(8vw, 42px);
+  height: min(2.5vw, 14px);
   border-radius: 10px;
   border: 3px solid black;
   background-color: transparent;
@@ -167,6 +176,8 @@ body {
 
 .high-stake-ring.red { background-color: red; border-color: red; }
 .high-stake-ring.blue { background-color: blue; border-color: blue; }
+.high-stake-ring.red { background-color: red; border-color: red; }
+.high-stake-ring.blue { background-color: blue; border-color: blue; }
 
 .auton-container {
   display: flex;
@@ -176,9 +187,9 @@ body {
 }
 
 .auton-button {
-  width: 30px;
-  height: 30px;
-  font-size: 14px;
+  width: min(6vw, 30px);
+  height: min(6vw, 30px);
+  font-size: min(2.5vw, 14px);
   font-weight: bold;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -186,6 +197,10 @@ body {
   transition: background-color 0.1s, color 0.1s;
 }
 
+#auton-red { border-color: red; color: red; }
+#auton-red.selected { background-color: red; color: white; }
+#auton-blue { border-color: blue; color: blue; }
+#auton-blue.selected { background-color: blue; color: white; }
 #auton-red { border-color: red; color: red; }
 #auton-red.selected { background-color: red; color: white; }
 #auton-blue { border-color: blue; color: blue; }
@@ -198,15 +213,18 @@ body {
 }
 
 /* Stake Columns */
+/* Stake Columns */
 .stake-column {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-direction: column;
   align-items: center;
 }
 
 .stake-container {
   display: flex;
-  gap: 5px;
+  gap: 5px; /* Fixed gap between stake and buttons */
   align-items: flex-start;
 }
 
@@ -218,36 +236,38 @@ body {
 
 .stake {
   position: relative;
-  width: 62px;
+  width: min(12vw, 62px);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .stake-cap {
-  width: 28px;
-  height: 14px;
+  width: min(5vw, 28px);
+  height: min(2.5vw, 14px);
   background-color: #DDED00;
+  clip-path: polygon(60% 0, 40% 0, 0% 100%, 100% 100%);
   clip-path: polygon(60% 0, 40% 0, 0% 100%, 100% 100%);
   z-index: 1;
 }
 
 .stake-pole {
-  width: 10px;
-  height: 140px;
+  width: min(2vw, 10px);
+  height: min(25vw, 140px);
   background-color: #DDED00;
-  margin-top: -10px;
-  margin-bottom: -10px;
+  margin-top: -10px; /* Fixed overlap with cap */
+  margin-bottom: -10px; /* Fixed overlap with base */
 }
 
 .stake-base {
-  width: 72px;
-  height: 12px;
+  width: min(14vw, 72px);
+  height: min(2vw, 12px);
   background-color: #DDED00;
   clip-path: polygon(0 0, 100% 0, 65% 100%, 35% 100%);
   border-radius: 10px;
 }
 
+#wall1 .stake-pole, #wall2 .stake-pole {
 #wall1 .stake-pole, #wall2 .stake-pole {
   background-color: #000000;
   height: 129px;
@@ -262,8 +282,8 @@ body {
 
 .stake .ring-container {
   position: absolute;
-  top: -14px;
-  bottom: 40px;
+  top: -14px; /* Fixed position */
+  bottom: 40px; /* Fixed position */
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
@@ -285,8 +305,8 @@ body {
 }
 
 .ring {
-  width: 42px;
-  height: 14px;
+  width: min(8vw, 42px);
+  height: min(2.5vw, 14px);
   border-radius: 10px;
   margin: 2px 0;
 }
@@ -303,7 +323,8 @@ body {
   padding-top: 0;
 }
 
-.button-container {
+/* Buttons */
+.control-column {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -330,9 +351,9 @@ body {
 }
 
 .button {
-  width: 36px;
-  height: 36px;
-  font-size: 18px;
+  width: min(7vw, 36px);
+  height: min(7vw, 36px);
+  font-size: min(3vw, 18px);
   font-weight: bold;
   border: none;
   border-radius: 10px;
@@ -346,6 +367,7 @@ body {
   transition: none;
 }
 
+.button:disabled { cursor: not-allowed; opacity: 0.6; }
 .button:disabled { cursor: not-allowed; opacity: 0.6; }
 
 .alliance-button {
@@ -361,13 +383,13 @@ body {
 
 .corner-controls {
   display: flex;
-  gap: 5px;
-  margin-top: 5px;
+  gap: 1vw;
+  margin-top: 5px; /* Fixed position */
 }
 
 .corner-btn {
-  width: 28px;
-  height: 20px;
+  width: min(5vw, 28px);
+  height: min(3.5vw, 20px);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -375,6 +397,8 @@ body {
   transition: background-color 0.1s, color 0.1s;
 }
 
+.corner-btn.selected.positive { background-color: #4CAF50; color: white; }
+.corner-btn.selected.negative { background-color: #f44336; color: white; }
 .corner-btn.selected.positive { background-color: #4CAF50; color: white; }
 .corner-btn.selected.negative { background-color: #f44336; color: white; }
 .corner-btn:active {
