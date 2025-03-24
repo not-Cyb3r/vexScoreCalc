@@ -9,8 +9,8 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="score-container">
-    <!-- Red Hang -->
+  <!-- Row 1: Hang, Scores, High Stake, Auton Bonus -->
+  <div class="top-row">
     <div class="hang-container">
       <div class="hang-alliance red-hang">
         <div class="hang-tier red" data-tier="1">
@@ -23,14 +23,11 @@
         </div>
       </div>
     </div>
-
-    <!-- Scores and Autonomous Buttons -->
-    <div class="scores-and-auton">
-      <div class="scores">
+    <div class="center-container">
+      <div class="scores-and-high-stake">
         <div class="score red-score">
           <span id="redPoints">0</span>
         </div>
-        <!-- High Stake Ring -->
         <div class="stake" id="highStake">
           <div class="stake-cap"></div>
           <div class="stake-pole"></div>
@@ -41,14 +38,11 @@
           <span id="bluePoints">0</span>
         </div>
       </div>
-      <!-- Autonomous Buttons -->
       <div class="auton-container">
         <button id="auton-red" class="auton-button">A</button>
         <button id="auton-blue" class="auton-button">A</button>
       </div>
     </div>
-
-    <!-- Blue Hang -->
     <div class="hang-container">
       <div class="hang-alliance blue-hang">
         <div class="hang-tier blue" data-tier="1">
@@ -63,10 +57,26 @@
     </div>
   </div>
 
-  <!-- Main Container for Stakes (single instance) -->
-  <div class="main-container" id="stakesContainer"></div>
+  <!-- Row 2: Wall and Alliance Stakes -->
+  <div class="wall-alliance-row">
+    <div class="stake-column" id="wall1-container"></div>
+    <div class="stake-column" id="alliance1-container"></div>
+    <div class="stake-column" id="alliance2-container"></div>
+    <div class="stake-column" id="wall2-container"></div>
+  </div>
 
-  <!-- Global Reset Button (single instance) -->
+  <!-- Row 3: Three Mogos -->
+  <div class="mogo-row-three">
+    <div class="stake-column" id="mogo1-container"></div>
+    <div class="stake-column" id="mogo2-container"></div>
+    <div class="stake-column" id="mogo3-container"></div>
+  </div>
+
+  <!-- Row 4: Two Mogos and Reset Button -->
+  <div class="mogo-row-two">
+    <div class="stake-column" id="mogo4-container"></div>
+    <div class="stake-column" id="mogo5-container"></div>
+  </div>
   <button class="global-reset" id="globalReset">🗑️</button>
 
   <script src="script.js"></script>
