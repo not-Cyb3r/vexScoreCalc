@@ -27,11 +27,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: 4px; /* Minimum spacing between rows */
+  gap: 0px; /* Minimum spacing between rows */
 }
 
 /* Scale row gaps when screen is tall enough */
-@media (min-height: 620px) {
+@media (min-height: 660px) {
   body {
     gap: clamp(0px, 4vh, (90vh - 660px)/3);
   }
