@@ -31,9 +31,9 @@ body {
 }
 
 /* Scale row gaps when screen is tall enough */
-@media (min-height: 660px) {
+@media (min-height: 600px) {
   body {
-    gap: clamp(0px, 4vh, (90vh - 660px)/3);
+    gap: clamp(4px, 6vh, (95vh - 600px)/3);
   }
 }
 
@@ -42,8 +42,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   flex: 0 0 auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Row 2: Wall and Alliance Stakes */
@@ -51,10 +53,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px; /* Minimum spacing */
-  padding-top: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
   flex: 0 0 auto;
+  margin-top: -20px;
 }
 
 /* Row 3: Three Mogos */
@@ -62,7 +62,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px; /* Minimum spacing */
-  padding: 10px;
   flex: 0 0 auto;
 }
 
@@ -71,7 +70,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px; /* Minimum spacing */
-  padding: 10px;
   flex: 0 0 auto;
 }
 
