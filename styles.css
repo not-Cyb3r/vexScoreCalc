@@ -33,7 +33,7 @@ body {
 /* Scale row gaps when screen is tall enough */
 @media (min-height: 600px) {
   body {
-    gap: clamp(0px, 4vh, 6vh); /* Scales up to 10vh with height */
+    gap: clamp(0px, 3vh, 6vh); /* Scales up to 10vh with height */
   }
 }
 
