@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px;
+  padding: 10px;
   flex: 0 0 auto;
 }
 
@@ -76,7 +76,7 @@ body {
 /* Scale gaps when screen is wide enough */
 @media (min-width: 450px) {
   .wall-alliance-row {
-    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(1px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 350px) {
@@ -419,8 +419,8 @@ body {
 /* Global Reset Button */
 .global-reset {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 12px;
+  right: 12px;
   width: 50px;
   height: 50px;
   font-size: 30px;
