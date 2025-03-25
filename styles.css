@@ -31,9 +31,9 @@ body {
 }
 
 /* Scale row gaps when screen is tall enough */
-@media (min-height: 580px) {
+@media (min-height: 620px) {
   body {
-    gap: clamp(0px, 4vh, (100vh - 580px)/3); /* Scales up to 10vh with height */
+    gap: clamp(0px, 4vh, (90vh - 620px)/3);
   }
 }
 
@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9px;
+  padding: 10px;
   flex: 0 0 auto;
 }
 
@@ -50,7 +50,7 @@ body {
 .wall-alliance-row {
   display: flex;
   justify-content: center;
-  gap: 9px; /* Minimum spacing */
+  gap: 10px; /* Minimum spacing */
   padding-top: 0px;
   padding-left: 0px;
   padding-right: 0px;
@@ -61,7 +61,7 @@ body {
 .mogo-row-three {
   display: flex;
   justify-content: center;
-  gap: 9px; /* Minimum spacing */
+  gap: 10px; /* Minimum spacing */
   padding: 10px;
   flex: 0 0 auto;
 }
@@ -70,7 +70,7 @@ body {
 .mogo-row-two {
   display: flex;
   justify-content: center;
-  gap: 9px; /* Minimum spacing */
+  gap: 10px; /* Minimum spacing */
   padding: 10px;
   flex: 0 0 auto;
 }
@@ -78,17 +78,17 @@ body {
 /* Scale gaps when screen is wide enough */
 @media (min-width: 424px) {
   .wall-alliance-row {
-    gap: clamp(9px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(10px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 350px) {
   .mogo-row-three {
-    gap: clamp(9px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(10px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 250px) {
   .mogo-row-two {
-    gap: clamp(9px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(10px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 
