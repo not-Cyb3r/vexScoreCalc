@@ -31,9 +31,9 @@ body {
 }
 
 /* Scale row gaps when screen is tall enough */
-@media (min-height: 530px) {
+@media (min-height: 580px) {
   body {
-    gap: clamp(0px, 4vh, (100vh - 530px)/3); /* Scales up to 10vh with height */
+    gap: clamp(0px, 4vh, (100vh - 580px)/3); /* Scales up to 10vh with height */
   }
 }
 
