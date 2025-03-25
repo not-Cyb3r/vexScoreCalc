@@ -50,7 +50,7 @@ body {
 .wall-alliance-row {
   display: flex;
   justify-content: center;
-  gap: 4px; /* Minimum spacing */
+  gap: 6px; /* Minimum spacing */
   padding-top: 0px;
   padding-left: 0px;
   padding-right: 0px;
@@ -61,7 +61,7 @@ body {
 .mogo-row-three {
   display: flex;
   justify-content: center;
-  gap: 4px; /* Minimum spacing */
+  gap: 6px; /* Minimum spacing */
   padding: 10px;
   flex: 0 0 auto;
 }
@@ -70,7 +70,7 @@ body {
 .mogo-row-two {
   display: flex;
   justify-content: center;
-  gap: 4px; /* Minimum spacing */
+  gap: 6px; /* Minimum spacing */
   padding: 10px;
   flex: 0 0 auto;
 }
@@ -78,17 +78,17 @@ body {
 /* Scale gaps when screen is wide enough */
 @media (min-width: 424px) {
   .wall-alliance-row {
-    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(6px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 350px) {
   .mogo-row-three {
-    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(6px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 250px) {
   .mogo-row-two {
-    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(6px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 
