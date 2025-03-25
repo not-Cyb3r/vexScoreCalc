@@ -76,17 +76,17 @@ body {
 /* Scale gaps when screen is wide enough */
 @media (min-width: 450px) {
   .wall-alliance-row {
-    gap: clamp(4px, 4vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 350px) {
   .mogo-row-three {
-    gap: clamp(4px, 4vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 @media (min-width: 250px) {
   .mogo-row-two {
-    gap: clamp(4px, 4vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
   }
 }
 
