@@ -27,7 +27,14 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: clamp(4px, 1vh, 20px); /* Scales vertical space between rows */
+  gap: 4px; /* Minimum spacing between rows */
+}
+
+/* Scale row gaps when screen is wide enough */
+@media (min-width: 450px) {
+  body {
+    gap: clamp(4px, 2vw, 10vw); /* Scales up to 10vw */
+  }
 }
 
 /* Row 1: Top Row */
@@ -216,7 +223,6 @@ body {
   transition: none;
 }
 
-/* Stake Columns */
 /* Stake Columns */
 .stake-column {
   display: flex;
