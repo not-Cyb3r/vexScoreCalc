@@ -50,8 +50,10 @@ body {
 .wall-alliance-row {
   display: flex;
   justify-content: center;
-  gap: 0px; /* Minimum spacing */
-  padding: 0px;
+  gap: 4px; /* Minimum spacing */
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
   flex: 0 0 auto;
 }
 
@@ -74,7 +76,7 @@ body {
 }
 
 /* Scale gaps when screen is wide enough */
-@media (min-width: 450px) {
+@media (min-width: 424px) {
   .wall-alliance-row {
     gap: clamp(4px, 6vw, 10vw); /* Scales up to 10vw */
   }
