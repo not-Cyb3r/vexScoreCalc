@@ -419,8 +419,8 @@ body {
 /* Global Reset Button */
 .global-reset {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   width: 50px;
   height: 50px;
   font-size: 30px;
