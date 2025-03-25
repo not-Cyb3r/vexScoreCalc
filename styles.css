@@ -30,10 +30,10 @@ body {
   gap: 4px; /* Minimum spacing between rows */
 }
 
-/* Scale row gaps when screen is wide enough */
-@media (min-width: 450px) {
+/* Scale row gaps when screen is tall enough */
+@media (min-height: 600px) {
   body {
-    gap: clamp(4px, 2vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(0px, 4vh, 6vh); /* Scales up to 10vh with height */
   }
 }
 
