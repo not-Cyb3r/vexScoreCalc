@@ -49,44 +49,44 @@ body {
 /* Row 2: Wall and Alliance Stakes */
 .wall-alliance-row {
   display: flex;
-  justify-content: center;
-  gap: 4px; /* Minimum spacing */
-  padding: 0px;
+  justify-content: space-around; /* Equal gaps around units, including edges */
+  gap: 4px; /* Minimum spacing between units */
+  padding: 0; /* No padding, edge gaps handled by space-around */
   flex: 0 0 auto;
 }
 
 /* Row 3: Three Mogos */
 .mogo-row-three {
   display: flex;
-  justify-content: center;
-  gap: 4px; /* Minimum spacing */
-  padding: 10px;
+  justify-content: space-around; /* Equal gaps around units, including edges */
+  gap: 4px; /* Minimum spacing between units */
+  padding: 10px 0; /* Vertical padding only */
   flex: 0 0 auto;
 }
 
 /* Row 4: Two Mogos */
 .mogo-row-two {
   display: flex;
-  justify-content: center;
-  gap: 4px; /* Minimum spacing */
-  padding: 10px;
+  justify-content: space-around; /* Equal gaps around units, including edges */
+  gap: 4px; /* Minimum spacing between units */
+  padding: 10px 0; /* Vertical padding only */
   flex: 0 0 auto;
 }
 
 /* Scale gaps when screen is wide enough */
 @media (min-width: 450px) {
   .wall-alliance-row {
-    gap: clamp(4px, 2vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(4px, 2vw, 10vw); /* Scales unit-to-unit gap */
   }
 }
 @media (min-width: 350px) {
   .mogo-row-three {
-    gap: clamp(4px, 2vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(4px, 2vw, 10vw); /* Scales unit-to-unit gap */
   }
 }
 @media (min-width: 250px) {
   .mogo-row-two {
-    gap: clamp(4px, 2vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(4px, 2vw, 10vw); /* Scales unit-to-unit gap */
   }
 }
 
