@@ -52,7 +52,7 @@ body {
 .wall-alliance-row {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Minimum spacing */
+  gap: 10px;
   flex: 0 0 auto;
   margin-top: -20px;
 }
@@ -61,7 +61,7 @@ body {
 .mogo-row-three {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Minimum spacing */
+  gap: 10px;
   flex: 0 0 auto;
 }
 
@@ -69,24 +69,24 @@ body {
 .mogo-row-two {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Minimum spacing */
+  gap: 10px;
   flex: 0 0 auto;
 }
 
 /* Scale gaps when screen is wide enough */
 @media (min-width: 424px) {
   .wall-alliance-row {
-    gap: clamp(10px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(10px, 6vw, 10vw);
   }
 }
 @media (min-width: 350px) {
   .mogo-row-three {
-    gap: clamp(10px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(10px, 6vw, 10vw);
   }
 }
 @media (min-width: 250px) {
   .mogo-row-two {
-    gap: clamp(10px, 6vw, 10vw); /* Scales up to 10vw */
+    gap: clamp(10px, 6vw, 10vw);
   }
 }
 
@@ -234,7 +234,7 @@ body {
 
 .stake-container {
   display: flex;
-  gap: 5px; /* Fixed gap between stake and buttons */
+  gap: 5px;
   align-items: flex-start;
 }
 
@@ -265,8 +265,8 @@ body {
   width: 10px;
   height: 140px;
   background-color: #DDED00;
-  margin-top: -10px; /* Fixed overlap with cap */
-  margin-bottom: -10px; /* Fixed overlap with base */
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
 .stake-base {
@@ -291,8 +291,8 @@ body {
 
 .stake .ring-container {
   position: absolute;
-  top: -14px; /* Fixed position */
-  bottom: 40px; /* Fixed position */
+  top: -14px;
+  bottom: 40px;
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
@@ -392,7 +392,7 @@ body {
 .corner-controls {
   display: flex;
   gap: 8px;
-  margin-top: 5px; /* Fixed position */
+  margin-top: 5px;
 }
 
 .corner-btn {
