@@ -5,8 +5,8 @@ const urlsToCache = [
   '/vexScoreCalc/styles.css',
   '/vexScoreCalc/script.js',
   '/vexScoreCalc/manifest.json',
-  '/vexScoreCalc/icons/icon-192x192.png',
-  '/vexScoreCalc/icons/icon-512x512.png'
+  '/vexScoreCalc/icons/highStakesMogo192x192.png',
+  '/vexScoreCalc/icons/highStakesMogo512x512.png'
 ];
 
 self.addEventListener('install', event => {
