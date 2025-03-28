@@ -14,7 +14,7 @@ const RING_LIMIT = 24;
 const stakes = {};
 const stakeIds = ['wall1', 'alliance1', 'alliance2', 'wall2', 'mogo1', 'mogo2', 'mogo3', 'mogo4', 'mogo5'];
 const cornerStates = { positive: new Set(), negative: new Set() };
-let hangLevels = { red1: 0, red2: 0, blue1: 0, blue2: 0 };
+let gridLevels = { red1: 0, red2: 0, blue1: 0, blue2: 0 };
 
 function cycleHighStakeRing() {
   const ring = document.getElementById('highStakeRing');
@@ -73,19 +73,19 @@ function calculateScore() {
   }
 
   if (highStakeState === 'red') {
-    if (hangLevels.red1 > 0) scores.red += 2;
-    if (hangLevels.red2 > 0) scores.red += 2;
+    if (gridLevels.red1 > 0) scores.red += 2;
+    if (gridLevels.red2 > 0) scores.red += 2;
   } else if (highStakeState === 'blue') {
-    if (hangLevels.blue1 > 0) scores.blue += 2;
-    if (hangLevels.blue2 > 0) scores.blue += 2;
+    if (gridLevels.blue1 > 0) scores.blue += 2;
+    if (gridLevels.blue2 > 0) scores.blue += 2;
   }
 
-  scores.red += (hangLevels.red1 + hangLevels.red2) * 3;
-  if (hangLevels.red1 === 3) scores.red += 3;
-  if (hangLevels.red2 === 3) scores.red += 3;
-  scores.blue += (hangLevels.blue1 + hangLevels.blue2) * 3;
-  if (hangLevels.blue1 === 3) scores.blue += 3;
-  if (hangLevels.blue2 === 3) scores.blue += 3;
+  scores.red += (gridLevels.red1 + gridLevels.red2) * 3;
+  if (gridLevels.red1 === 3) scores.red += 3;
+  if (gridLevels.red2 === 3) scores.red += 3;
+  scores.blue += (gridLevels.blue1 + gridLevels.blue2) * 3;
+  if (gridLevels.blue1 === 3) scores.blue += 3;
+  if (gridLevels.blue2 === 3) scores.blue += 3;
 
   document.getElementById('redPoints').textContent = scores.red;
   document.getElementById('bluePoints').textContent = scores.blue;
@@ -250,12 +250,12 @@ function updateAddRingButtons() {
   });
 }
 
-function updateHangTierDisplay(tierElement, level) {
-  const fill = tierElement.querySelector('.fill');
-  const levelDisplay = tierElement.querySelector('.level');
-  const heightPercentage = level * 25;
-  fill.style.height = `${heightPercentage}%`;
-  levelDisplay.textContent = level;
+function updateGridBoxDisplay(gridBox, level) {
+  const grids = gridBox.querySelectorAll('.grid');
+  grids.forEach(grid => {
+    const index = parseInt(grid.dataset.index);
+    grid.classList.toggle('filled', index < level);
+  });
 }
 
 function resetEverything() {
@@ -266,19 +266,18 @@ function resetEverything() {
   stakeIds.forEach(stakeId => resetStake(stakeId));
   cornerStates.positive.clear();
   cornerStates.negative.clear();
-  hangLevels = { red1: 0, red2: 0, blue1: 0, blue2: 0 };
+  gridLevels = { red1: 0, red2: 0, blue1: 0, blue2: 0 };
 
   const highStakeRing = document.getElementById('highStakeRing');
   highStakeRing.classList.remove('red', 'blue');
   updateAutonomousButtons();
   updateCornerButtons();
   updateAddRingButtons();
-  document.querySelectorAll('.hang-tier').forEach(tier => updateHangTierDisplay(tier, 0));
+  document.querySelectorAll('.grid-box').forEach(gridBox => updateGridBoxDisplay(gridBox, 0));
   calculateScore();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Populate stake containers
   stakeIds.forEach(id => {
     const container = document.getElementById(`${id}-container`);
     if (container) container.appendChild(createStakeColumn(id));
@@ -292,13 +291,11 @@ document.addEventListener('DOMContentLoaded', () => {
     resetEverything();
   });
 
-  document.querySelectorAll('.hang-tier').forEach(tier => {
-    tier.addEventListener('click', () => {
-      const alliance = tier.classList.contains('red') ? 'red' : 'blue';
-      const tierNumber = tier.dataset.tier;
-      const key = `${alliance}${tierNumber}`;
-      hangLevels[key] = (hangLevels[key] + 1) % 4;
-      updateHangTierDisplay(tier, hangLevels[key]);
+  document.querySelectorAll('.grid-box').forEach(gridBox => {
+    const key = gridBox.id.replace('Grid', '');
+    gridBox.addEventListener('click', () => {
+      gridLevels[key] = (gridLevels[key] + 1) % 4;
+      updateGridBoxDisplay(gridBox, gridLevels[key]);
       calculateScore();
     });
   });
@@ -306,4 +303,5 @@ document.addEventListener('DOMContentLoaded', () => {
   updateAutonomousButtons();
   updateCornerButtons();
   updateAddRingButtons();
+  document.querySelectorAll('.grid-box').forEach(gridBox => updateGridBoxDisplay(gridBox, gridLevels[gridBox.id.replace('Grid', '')]));
 });
